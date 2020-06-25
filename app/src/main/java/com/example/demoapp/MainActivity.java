@@ -13,21 +13,20 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView rock, paper, scissors, computerImage;
-    TextView computerScore,playerScore;
-    ConstraintLayout parent;
-    Button turn;
-    boolean isRunning = false;
-
-    float scaleBy = 1.5f;
-    long duration = 200L;
-    Handler handler = new Handler();
+    private ImageView rock, paper, scissors, computerImage;
+    private TextView computerScore, playerScore;
+    private ConstraintLayout parent;
+    private Button turn;
+    private boolean isRunning = false;
+    private float scaleBy = 1.5f;
+    private long duration = 200L;
+    private Handler handler = new Handler();
 
     // GAME VARS
-    int COMPUTER;
-    int PLAYER;
-    int PLAYER_SCORE = 0;
-    int COMPUTER_SCORE = 0;
+    private int COMPUTER;
+    private int PLAYER;
+    private int PLAYER_SCORE = 0;
+    private int COMPUTER_SCORE = 0;
 
     private void selectOption(int id) {
         resetPlayerImages();
@@ -109,8 +108,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 System.out.println("computer :: " + COMPUTER_SCORE + " player :: " + PLAYER_SCORE);
-                computerScore.setText(""+COMPUTER_SCORE);
-                playerScore.setText(""+PLAYER_SCORE);
+                computerScore.setText("" + COMPUTER_SCORE);
+                playerScore.setText("" + PLAYER_SCORE);
                 if (COMPUTER_SCORE == PLAYER_SCORE)
                     parent.setBackgroundResource(R.drawable.draw);
                 else if (COMPUTER_SCORE > PLAYER_SCORE)
